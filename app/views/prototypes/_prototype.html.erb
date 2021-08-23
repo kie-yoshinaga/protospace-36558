@@ -10,7 +10,7 @@
       <% "prototype.concept" %>
       <%= prototype.concept%>
     </p>
-    <%= link_to "by #{prototype.user.name}", root_path(prototype.user_id), method: :get, class: :card__user %>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user_id), method: :get, class: :card__user %>
     <% prototype.user.name%>
   </div>
 </div>

@@ -15,8 +15,7 @@ class PrototypesController < ApplicationController
     if @prototypes.save
       redirect_to root_path
     else
-      @prototypes = @prototypes.includes(:user)
-      render :index
+      render :new
     end
   end
 
@@ -44,7 +43,7 @@ class PrototypesController < ApplicationController
 
 private
 def configure_permitted_parameters
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
 end
 
 def prototype_params
